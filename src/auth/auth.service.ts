@@ -14,20 +14,8 @@ export class AuthService {
     async validateUser(username: string, pass: string): Promise<any> {
         const user = await this.usersService.findUserByName(username);
         console.log('user dentro de AuthService', user);
-        
-        //console.log('comparar pas', this.encryptionService.compare(pass, user.password));
-        /*if (user && user.password === pass) {
-            // if (user && this.encryptionService.compare(pass, user.password)) {
-            //  console.log('user dentro de AuthService',user);
-            const { password, ...result } = user; //crea un objeto result sin la propiedad password
-            // console.log('result dentro de AuthService',result);
-            console.log('roles dentro de AuthService', result.rol);
-            return result;
-        }
-        return null;*/
-
-        return  new Promise( async (resolve) => {
-            
+        return  new Promise( async (resolve) => {  
+            if(user !=null)  {        
             // Check the supplied password against the hash stored for this email address
             (await user).checkPassword(pass, (err, isMatch) => {
     
@@ -41,6 +29,9 @@ export class AuthService {
                 }
     
             });
+        }else{
+            resolve(null);
+        }
 
         });
     }

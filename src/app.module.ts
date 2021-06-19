@@ -8,7 +8,7 @@ import { MulterModule } from '@nestjs/platform-express';
 import { EventoModule } from './evento/evento.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { EncryptionModule } from './encryption/encryption.module';
+import { ComentModule } from './coment/coment.module';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ import { EncryptionModule } from './encryption/encryption.module';
     EventoModule,
     UsersModule,
     AuthModule,
-    EncryptionModule,
+    ComentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

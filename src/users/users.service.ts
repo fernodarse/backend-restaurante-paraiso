@@ -109,13 +109,13 @@ export class UsersService {
 
   async findById(id: string): Promise<any> {
     try {
-      const menu = (await this.userModel.findById(id).exec());
+      const user = (await this.userModel.findById(id).exec());
 
-      if (menu === null) {
+      if (user === null) {
         throw new BadRequestException('No existe el user con id: ' + id);
       }
 
-      return menu;
+      return user;
     } catch (error) {
       throw new BadRequestException(error);
     }

@@ -1,7 +1,6 @@
 import * as bcrypt from 'bcrypt';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { EncryptionService } from 'src/encryption/encryption.service';
 
 @Schema()
 export class User extends Document{

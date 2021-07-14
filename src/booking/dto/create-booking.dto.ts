@@ -23,4 +23,7 @@ export class  CreateBookingDto{
 
     @IsDate()
     createdDate: any;
+
+    @IsString()
+    userId: string;
 }

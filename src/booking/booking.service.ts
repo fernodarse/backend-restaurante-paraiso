@@ -26,7 +26,7 @@ export class BookingService {
     async getAll(): Promise<any[]> {
         //orderBy('createdDate', 'desc'))
         const bookingList = (await this.bookingModel.find()
-        .sort({ 'date' : 'desc','createdDate' : 'desc' } )//-1 desc, 1 - asc
+        .sort({ 'date' : 'desc','createdDate' : 'asc' } )//-1 desc, 1 - asc
         .exec());
         return bookingList.map(booking => ({
             bookingId: booking.id,

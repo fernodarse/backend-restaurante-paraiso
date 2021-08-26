@@ -9,6 +9,9 @@ export class Booking extends Document {
     @Prop({ type: String, index: true, required: true })
     name: string;
 
+    @Prop({ type: String, required: true })
+    email: string;
+
     @Prop({ type: Date, required: true })
     date: any;
 

@@ -31,6 +31,7 @@ export class BookingService {
         return bookingList.map(booking => ({
             bookingId: booking.id,
             name: booking.name,
+            email: booking.email,
             date: booking.date,
             time: booking.time,
             cantPersonas: booking.cantPersonas,
@@ -45,6 +46,7 @@ export class BookingService {
         return {
             bookingId: booking.id,
             name: booking.name,
+            email: booking.email,
             date: booking.date,
             time: booking.time,
             cantPersonas: booking.cantPersonas,

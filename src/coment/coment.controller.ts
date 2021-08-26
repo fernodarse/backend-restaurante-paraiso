@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post } from '@nestjs/common';
+import { MailService } from 'src/mail/mail.service';
 import { ComentService } from './coment.service';
 import { CreateComentDto } from './dto/create-coment.dto';
 import { Coment } from './schemas/coment.schema';
@@ -6,7 +7,8 @@ import { Coment } from './schemas/coment.schema';
 @Controller('coment')
 export class ComentController {
 
-    constructor(private readonly comentService: ComentService) { }
+    constructor(private readonly comentService: ComentService,
+        private mailService: MailService) { }
 
     @Get()
     async findAll(): Promise<Coment[]> {
@@ -15,7 +17,31 @@ export class ComentController {
 
     @Post()
     async create(@Body() menudto: CreateComentDto) {
-       return this.comentService.create(menudto);
+        let respuesta;
+        try {
+            let obj = (await this.comentService.create(menudto))
+            let envioCorreo=(await this.mailService.sendCommentConfirmation(obj));
+            envioCorreo ?
+            respuesta = {
+                statusCode: HttpStatus.OK,
+                message: 'Su comentario se ha registrado correctamente',
+                entity: obj,
+            }
+            :
+            respuesta= {
+                statusCode: HttpStatus.OK,
+                message: 'El comentario se ha registado,no ha podido ser notificado por correo',
+                entity: obj,
+            };
+            console.log('Comentario creado', obj)
+        } catch (error) {
+            console.log(error)
+            respuesta = {
+                statusCode: HttpStatus.CONFLICT,
+                message: 'Ha ocurrido un error, intentelo más tarde',
+            };
+        }
+        return respuesta;
     }
 
     @Get('/id/:id')
@@ -33,7 +59,7 @@ export class ComentController {
         @Param('id') comentId: string,
         @Body() comentdto: CreateComentDto,
     ) {
-        console.log('menu recibido', comentdto,comentId )
+        console.log('menu recibido', comentdto, comentId)
         const updateComent = await this.comentService.update(comentId, comentdto);
         return updateComent;
     }

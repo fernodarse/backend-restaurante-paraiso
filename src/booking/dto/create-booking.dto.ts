@@ -6,6 +6,9 @@ export class  CreateBookingDto{
     @IsString()
     name: string;
 
+    @IsString()
+    email: string;
+
     @IsDate()
     date: any;
 

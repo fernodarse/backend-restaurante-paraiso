@@ -1,4 +1,5 @@
-import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { MailService } from 'src/mail/mail.service';
 import { User } from 'src/users/schemas/user.schema';
 import { UsersService } from 'src/users/users.service';
@@ -13,6 +14,7 @@ export class BookingController {
         private userService: UsersService,
         private mailService: MailService) { }
 
+    @UseGuards(JwtAuthGuard)
     @Get()
     async findAll(): Promise<Booking[]> {
         return this.bookingService.getAll();
@@ -20,61 +22,89 @@ export class BookingController {
 
     @Post()
     async create(@Body() bookingdto: CreateBookingDto) {
-       let respuesta;
+        let respuesta;
         try {
-            let user = (await this.userService.findById(bookingdto.userId));
-            if (user) {
-                let obj = (await this.bookingService.create(bookingdto))
-                console.log('booking creado', obj)
-                const token = Math.floor(1000 + Math.random() * 9000).toString();
-                /*let envioCorreo=(await this.mailService.sendUserConfirmation(user, token));            
-                envioCorreo ?*/
-                respuesta= {
-                    statusCode: HttpStatus.OK,
-                    message: 'La reserva se ha registrado correctamente',
-                    entity: obj,
-                }
-                /*:
-                respuesta= {
-                    statusCode: HttpStatus.OK,
-                    message: 'La reserva se ha registrado,en otro momento será notificado por correo',
-                    entity: obj,
-                };*/
+            let obj = (await this.bookingService.create(bookingdto))
+            console.log('booking creado', obj)
+            //const token = Math.floor(1000 + Math.random() * 9000).toString();
+            /*let envioCorreo=(await this.mailService.sendUserConfirmation(user, token));  */
+            let envioCorreo=(await this.mailService.sendBookingConfirmation(obj));
+            envioCorreo ?
+            respuesta = {
+                statusCode: HttpStatus.OK,
+                message: 'La reserva se ha registrado correctamente',
+                entity: obj,
             }
+            :
+            respuesta= {
+                statusCode: HttpStatus.OK,
+                message: 'La reserva se ha registrado,en otro momento será notificado por correo',
+                entity: obj,
+            };
+
         } catch (error) {
             console.log(error)
-            respuesta={
-                statusCode: HttpStatus.NOT_FOUND,
-                message: 'No se encuentra el usuario',
+            respuesta = {
+                statusCode: HttpStatus.CONFLICT,
+                message: 'Ha ocurrido un error, intentelo más tarde',
             };
         }
         return respuesta;
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('/id/:id')
     getBook(@Param('id') bookingId: string) {
         return this.bookingService.getBookingbyId(bookingId);
     }
 
+    @UseGuards(JwtAuthGuard)
     @Patch(':id')
     async updateBook(
         @Param('id') bookingId: string,
         @Body() bookingdto: CreateBookingDto,
     ) {
-        console.log('bokking recibido', bookingdto, bookingId)
-        const updateObj = await this.bookingService.update(bookingId, bookingdto);
-        console.log('bokking modificado', updateObj)
-        return updateObj;
+        let respuesta;
+        try {
+            console.log('bokking recibido', bookingdto, bookingId)
+            const updateObj = (await this.bookingService.update(bookingId, bookingdto));
+            console.log('bokking modificado', updateObj)
+            let envioCorreo=(await this.mailService.sendBookingConfirmation(updateObj,false));
+            envioCorreo ?
+            respuesta = {
+                statusCode: HttpStatus.OK,
+                message: 'La reserva se ha modificado correctamente',
+                entity: updateObj,
+            }
+            :
+            respuesta= {
+                statusCode: HttpStatus.OK,
+                message: 'La reserva se ha modificado,en otro momento será notificado por correo',
+                entity: updateObj,
+            };
+        } catch (error) {
+            console.log(error)
+            respuesta = {
+                statusCode: HttpStatus.CONFLICT,
+                message: 'Ha ocurrido un error, intentelo más tarde',
+            };
+        }
+        return respuesta;
     }
 
+    @UseGuards(JwtAuthGuard)
     @Delete(':id')
     async removeBook(@Param('id') eventoId: string) {
         const isDeleted = await this.bookingService.delete(eventoId);
         if (isDeleted) {
             return {
                 statusCode: HttpStatus.OK,
-                message: 'Evento eliminado satifactoriamente',
+                message: 'Reserva eliminada satifactoriamente',
             };
         }
+        return {
+            statusCode: HttpStatus.NOT_FOUND,
+            message: 'No se encuentra la reserva',
+        };
     }
 }

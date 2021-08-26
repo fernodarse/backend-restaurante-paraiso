@@ -6,7 +6,7 @@ import { Menu } from 'src/menu/schemas/menu.schema';
 @Schema()
 export class Coment extends Document {
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, required: true, ref: Menu.name })
+    @Prop({ type: mongoose.Schema.Types.ObjectId, required: false, ref: Menu.name })
     menuId: mongoose.Schema.Types.ObjectId;
 
     @Prop({ type: String })

@@ -12,17 +12,26 @@ import { join } from 'path';
       transport: {
         host: 'smtp.gmail.com',
         secure: false,
+        /*port: 465,
+        secure: true,*/
+
         auth: {
           user: 'lidiarosag19@gmail.com',
           pass: 'Habia1..vez',
+          /*type: 'OAuth2',
+          user: 'lidiarosag19',
+          clientId: '147312251222-ofbslf2sijancvtbsjfd45nhuh6o3du9.apps.googleusercontent.com',
+          clientSecret: 'WkC2Ysr6jnVCWI1YYp-ILFfy',
+          refreshToken: 'local_settings.my_oauth_refresh_token',
+          accessToken: 'local_settings.my_oauth_access_token'*/
         },
       },
       defaults: {
-        from: '"Prueba" <lidiarosag19@gmail.com>',
+        from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
       },
       template: {
         dir: join(__dirname, 'templates'),
-        adapter: new HandlebarsAdapter(), 
+        adapter: new HandlebarsAdapter(),
         options: {
           strict: true,
         },
@@ -32,4 +41,4 @@ import { join } from 'path';
   providers: [MailService],
   exports: [MailService],
 })
-export class MailModule {}
+export class MailModule { }

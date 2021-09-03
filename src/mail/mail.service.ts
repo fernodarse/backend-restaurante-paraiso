@@ -1,9 +1,9 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
-import { Booking } from 'src/booking/schemas/booking.schema';
-import { User } from 'src/users/schemas/user.schema';
+import { Booking } from '../booking/schemas/booking.schema';
+import { User } from '../users/schemas/user.schema';
 import * as moment from 'moment';
-import { Coment } from 'src/coment/schemas/coment.schema';
+import { Coment } from '../coment/schemas/coment.schema';
 
 @Injectable()
 export class MailService {

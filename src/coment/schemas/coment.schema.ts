@@ -1,7 +1,7 @@
 import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { Menu } from 'src/menu/schemas/menu.schema';
+import { Menu } from '../../menu/schemas/menu.schema';
 
 @Schema()
 export class Coment extends Document {

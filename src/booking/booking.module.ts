@@ -3,8 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { BookingService } from './booking.service';
 import { Booking, BookingSchema } from './schemas/booking.schema';
 import { BookingController } from './booking.controller';
-import { MailModule } from 'src/mail/mail.module';
-import { UsersModule } from 'src/users/users.module';
+import { MailModule } from '../mail/mail.module';
+import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [ 

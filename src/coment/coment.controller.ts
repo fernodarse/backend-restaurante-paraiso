@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post } from '@nestjs/common';
-import { MailService } from 'src/mail/mail.service';
+import { MailService } from '../mail/mail.service';
 import { ComentService } from './coment.service';
 import { CreateComentDto } from './dto/create-coment.dto';
 import { Coment } from './schemas/coment.schema';

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { MailService } from './mail.service';
-import { join } from 'path';
+import path, { join } from 'path';
 
 @Module({
   imports: [
@@ -30,7 +30,7 @@ import { join } from 'path';
         from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
       },
       template: {
-        dir: join(__dirname, 'templates'),
+        dir: path.resolve(__dirname, 'templates'),
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,

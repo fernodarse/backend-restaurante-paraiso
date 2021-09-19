@@ -2787,7 +2787,7 @@
         "affectsGlobalScope": false
       },
       "../src/mail/mail.module.ts": {
-        "version": "5ebd492aab1593e7bb4d258d62e49cbb1965a01cd4af650888cfe014194178c9",
+        "version": "997112d02f8809e2ce73dce9a887003c43044c2db1d8b53da10eb4bf9ce4627f",
         "signature": "6d1d5741b9310eb74d0cdd57f53757cc603e17114839706b912cdf7ae05a95d9",
         "affectsGlobalScope": false
       },

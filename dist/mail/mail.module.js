@@ -11,7 +11,6 @@ const common_1 = require("@nestjs/common");
 const mailer_1 = require("@nestjs-modules/mailer");
 const handlebars_adapter_1 = require("@nestjs-modules/mailer/dist/adapters/handlebars.adapter");
 const mail_service_1 = require("./mail.service");
-const path_1 = require("path");
 let MailModule = class MailModule {
 };
 MailModule = __decorate([
@@ -31,7 +30,7 @@ MailModule = __decorate([
                     from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
                 },
                 template: {
-                    dir: path_1.join(__dirname, 'templates'),
+                    dir: __dirname + '/templates',
                     adapter: new handlebars_adapter_1.HandlebarsAdapter(),
                     options: {
                         strict: true,

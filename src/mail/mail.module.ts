@@ -30,7 +30,7 @@ import path, { join,resolve } from 'path';
         from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
       },
       template: {
-        dir: __dirname + '/templates',
+        dir: process.cwd() + '/templates/',
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,

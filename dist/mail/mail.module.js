@@ -30,7 +30,7 @@ MailModule = __decorate([
                     from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
                 },
                 template: {
-                    dir: __dirname + '/templates',
+                    dir: process.cwd() + '/templates/',
                     adapter: new handlebars_adapter_1.HandlebarsAdapter(),
                     options: {
                         strict: true,

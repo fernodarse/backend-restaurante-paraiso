@@ -20,7 +20,8 @@ MailModule = __decorate([
             mailer_1.MailerModule.forRoot({
                 transport: {
                     host: 'smtp.gmail.com',
-                    secure: false,
+                    port: 465,
+                    secure: true,
                     auth: {
                         user: 'lidiarosag19@gmail.com',
                         pass: 'Habia1..vez',
@@ -30,7 +31,7 @@ MailModule = __decorate([
                     from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
                 },
                 template: {
-                    dir: path_1.default.resolve(__dirname, 'templates'),
+                    dir: path_1.join(__dirname, 'templates'),
                     adapter: new handlebars_adapter_1.HandlebarsAdapter(),
                     options: {
                         strict: true,

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { MailService } from './mail.service';
-import path, { join } from 'path';
+import path, { join,resolve } from 'path';
 
 @Module({
   imports: [
@@ -11,9 +11,9 @@ import path, { join } from 'path';
       // or
       transport: {
         host: 'smtp.gmail.com',
-        secure: false,
-        /*port: 465,
-        secure: true,*/
+        //secure: false,
+        port: 465,
+        secure: true,
 
         auth: {
           user: 'lidiarosag19@gmail.com',
@@ -30,7 +30,7 @@ import path, { join } from 'path';
         from: '"RESTAURANTE | FINCA AGROECOLOGICA EL PARAISO" <lidiarosag19@gmail.com>',
       },
       template: {
-        dir: path.resolve(__dirname, 'templates'),
+        dir: join(__dirname, 'templates'),
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,

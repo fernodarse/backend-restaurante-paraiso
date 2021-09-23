@@ -2762,7 +2762,7 @@
         "affectsGlobalScope": false
       },
       "../src/mail/mail.service.ts": {
-        "version": "010a0b9954794aba72c5253bd5626cae325e54d690ecf9c9d1f025c0dbebea84",
+        "version": "b57b473b4fb4d40fe2ac2afaee4159d5dc0032a6c00b8c70289e0246d46a909a",
         "signature": "2cb86e0ba125e5332962304965c57d2dc728e70f12452e3050fd3f9f33dac63d",
         "affectsGlobalScope": false
       },

@@ -41,9 +41,8 @@ let MailService = class MailService {
     async sendBookingConfirmation(booking, nuevo = true) {
         console.log('envindo correo a ', booking.email);
         let envio = false;
-        let fecha = moment(booking.date).format('ll');
-        let hora = moment(booking.time).format('HH:mm');
-        console.log('otro formato ', moment(booking.date).format('ll'));
+        let fecha = moment(new Date(booking.date.toLocaleString("en-US", { timeZone: "America/New_York" }))).format('ll');
+        let hora = moment(new Date(booking.time.toLocaleString("en-US", { timeZone: "America/New_York" }))).format('HH:mm');
         console.log('datos ', fecha + ' ' + hora);
         try {
             await this.mailerService.sendMail({

@@ -36,7 +36,7 @@ export class MailService {
         console.log('envindo correo a ',booking.email)
         let envio=false;
         let fecha= moment(new Date(booking.date.toLocaleString("en-US", {timeZone: "America/New_York"}))).format('ll'); //'D-MMM-YYYY'
-        let hora=  moment(new Date(booking.time.toLocaleString("en-US", {timeZone: "America/New_York"}))).format('HH:mm');
+        let hora=  moment(new Date(booking.time.toLocaleString("en-US", {timeZone: "America/New_York"}))).format('LT');
         //console.log('otro formato ', moment(booking.date).format('ll'))
         console.log('datos ',fecha +' ' + hora)
         try{

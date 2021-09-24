@@ -16,14 +16,14 @@ import path, { join,resolve } from 'path';
         secure: true,
 
         auth: {
-          user: 'lidiarosag19@gmail.com',
-          pass: 'Habia1..vez',
-          /*type: 'OAuth2',
+          /*user: 'lidiarosag19@gmail.com',
+          pass: 'Habia1..vez',*/
+          type: 'OAuth2',
           user: 'lidiarosag19',
-          clientId: '147312251222-ofbslf2sijancvtbsjfd45nhuh6o3du9.apps.googleusercontent.com',
-          clientSecret: 'WkC2Ysr6jnVCWI1YYp-ILFfy',
-          refreshToken: 'local_settings.my_oauth_refresh_token',
-          accessToken: 'local_settings.my_oauth_access_token'*/
+          clientId: '197059767779-l8gcp6ocemneieqpotp7rrr2oqdq2v03.apps.googleusercontent.com',
+          clientSecret: 'xFzYQUTlGp57x3TS-S__-Jp9',
+          refreshToken: '1//04RpMwxmV7T3SCgYIARAAGAQSNwF-L9IrXWCQplccZ8VYAecWq9tt6gt6HRQz6JnLkj57AiobE8M1ODyJc_gbwKm-alGIhZf2YqM',
+          accessToken: 'ya29.a0ARrdaM-dYDQQ7g1WOptS2lDRMzVXrPwCAXtdH0qStkK3HYsrk4cM24BG1eLZaOmnbSl2eE79BSp3la1PKXkhLHQjVGJ5R52Rxc9Uufu3Y1WG_Q3wXz8AQ9YUai5qdii73e3dwY0VgGTxV2_AU_c4NDuGc0tr'
         },
       },
       defaults: {

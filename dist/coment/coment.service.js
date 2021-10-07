@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const coment_schema_1 = require("./schemas/coment.schema");
+const moment = require("moment");
 let ComentService = class ComentService {
     constructor(comentModel) {
         this.comentModel = comentModel;
@@ -93,6 +94,33 @@ let ComentService = class ComentService {
             throw new common_1.BadRequestException('No existe el comentario con id: ' + id);
         }
         return true;
+    }
+    async getLastComent(id) {
+        var finDay = new Date(moment().subtract(id, 'days').format("YYYY-MM-DD") + "T00:00:00.000Z");
+        console.log('finday', finDay);
+        try {
+            const coment = (await this.comentModel.find({
+                'commentDate': { $gte: finDay }
+            })
+                .sort({ 'commentDate': -1 })
+                .exec());
+            if (coment === null) {
+                throw new common_1.BadRequestException('No existe el menu con id: ' + id);
+            }
+            return coment.map(coment => ({
+                commentId: coment.id,
+                menuId: coment.menuId,
+                email: coment.email,
+                commentedBy: coment.commentedBy,
+                photoURL: coment.photoURL,
+                content: coment.content,
+                commentDate: coment.commentDate,
+                activo: coment.activo,
+            }));
+        }
+        catch (error) {
+            throw new common_1.BadRequestException(error);
+        }
     }
 };
 ComentService = __decorate([

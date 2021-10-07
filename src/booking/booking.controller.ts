@@ -107,4 +107,10 @@ export class BookingController {
             message: 'No se encuentra la reserva',
         };
     }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('/book/hoy')
+    getBookHoy() {
+        return this.bookingService.getBookingHoy(new Date());
+    }
 }

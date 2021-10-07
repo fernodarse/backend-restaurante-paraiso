@@ -1,0 +1,13 @@
+<p>Hola {{ name }},</p>
+<p>Se ha 
+  {{#if nuevo}}
+      registrado la
+    {{^}}
+      modificado su
+    {{/if}}
+   reserva en el Restaurante Finca Agroecológica</p>
+<p>Detalles:</p>
+<p>Fecha de la reserva: {{ fecha }}, a las {{ hora }} </p>
+<p>Cantidad de clientes: {{ cantPer }}</p>
+<p>Mensaje del cliente: {{ mensaje }} </p>
+<p></p>

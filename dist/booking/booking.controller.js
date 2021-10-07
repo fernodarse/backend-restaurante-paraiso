@@ -101,6 +101,9 @@ let BookingController = class BookingController {
             message: 'No se encuentra la reserva',
         };
     }
+    getBookHoy() {
+        return this.bookingService.getBookingHoy(new Date());
+    }
 };
 __decorate([
     common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
@@ -141,6 +144,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], BookingController.prototype, "removeBook", null);
+__decorate([
+    common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
+    common_1.Get('/book/hoy'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], BookingController.prototype, "getBookHoy", null);
 BookingController = __decorate([
     common_1.Controller('booking'),
     __metadata("design:paramtypes", [booking_service_1.BookingService,

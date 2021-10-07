@@ -2691,9 +2691,14 @@
         "signature": "3acb8a18ccad6656f5931c19576a16c265461386b9195b8e590cb409ab644bf5",
         "affectsGlobalScope": false
       },
+      "../node_modules/moment/ts3.1-typings/moment.d.ts": {
+        "version": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
+        "signature": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
+        "affectsGlobalScope": false
+      },
       "../src/coment/coment.service.ts": {
-        "version": "9afc26b676af65e95c16b88cb78e929c5b3609fe420c02a1ac91e5acd8945a33",
-        "signature": "93c99c5f58760d3c6c0a1f65bfa9dfc28e5d3e6fe286d7e6996170803f8c480f",
+        "version": "31044366f317cfc56910869bfdb7ef4ce93a68cf5839ba0298493126f8341a09",
+        "signature": "59aa635b6b50815ed84a0acedd006acea4efac38f4225cacc77d20e860d18b2c",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter.interface.d.ts": {
@@ -2756,19 +2761,14 @@
         "signature": "4467862afceea75490be48af353d119429db7c978adb529b7635f3ee2f946dc8",
         "affectsGlobalScope": false
       },
-      "../node_modules/moment/ts3.1-typings/moment.d.ts": {
-        "version": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
-        "signature": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
-        "affectsGlobalScope": false
-      },
       "../src/mail/mail.service.ts": {
         "version": "7f56a2242ab5d6e19cc82b1f4507f0d0337a5b2f55565034c89dcae09c9cd9a2",
         "signature": "2cb86e0ba125e5332962304965c57d2dc728e70f12452e3050fd3f9f33dac63d",
         "affectsGlobalScope": false
       },
       "../src/coment/coment.controller.ts": {
-        "version": "5ee30a277d14c09bc26f0919a960dd6ba83378b81a7690665d31f9200fcfec01",
-        "signature": "4cc409de4f576f90ab248ee792afd132d63b96f6019cdce4a7eff87f626391c3",
+        "version": "ac77a2e9491b10642f5f97d06d5a8207bd3cfb41b98af8ce746c5b2f610007a7",
+        "signature": "f398ea0f047418f8f1fe45954b14ae2cdc255623a6176be9272ffe57091c6b61",
         "affectsGlobalScope": false
       },
       "../node_modules/handlebars/types/index.d.ts": {
@@ -2787,7 +2787,7 @@
         "affectsGlobalScope": false
       },
       "../src/mail/mail.module.ts": {
-        "version": "310d1963ad06a5ad3b776d9fdc6f7bb7acca731fbd799d360198599d1ef46133",
+        "version": "e00516b2ca38cc388fdbec089f55b279f338b4c2f401ad65b007dd936b1cf302",
         "signature": "6d1d5741b9310eb74d0cdd57f53757cc603e17114839706b912cdf7ae05a95d9",
         "affectsGlobalScope": false
       },
@@ -2802,13 +2802,13 @@
         "affectsGlobalScope": false
       },
       "../src/booking/booking.service.ts": {
-        "version": "a2883b165d86659a50e77b5b4968d0e2347f43b0b487b6ef17cb143845ec1890",
-        "signature": "2c7b5e41a59e0f81868faf8b3d9b934c09ca301f5fbc34533fd40f47fc3e3a29",
+        "version": "0883736bc974f725f1d6d6c5f77257b8a60f2571886ae6069191b3e68b47bc12",
+        "signature": "8a3b4f32bc163c9feb0928000a64e38e83e28bff725a40fb28c4a1126ac0bd0b",
         "affectsGlobalScope": false
       },
       "../src/booking/booking.controller.ts": {
-        "version": "19df0dcc764c109bfc410096105b741635642bf3ef6d715e1d05cc7c14fca11c",
-        "signature": "945829ebe82f61efca4d2473e4e49759c42f5f43115dcb43d8d19aaa88219539",
+        "version": "3f39e945e4accebffba10c91f7fd631b5cb20674533d2077daffaed971967062",
+        "signature": "238a4027ebb36393587016d3fb6ed2e62f3e776f3e00383ca91bb9ec4cdc3292",
         "affectsGlobalScope": false
       },
       "../src/booking/booking.module.ts": {
@@ -5063,6 +5063,7 @@
       "../src/booking/booking.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/mongoose/index.d.ts",
         "../src/booking/dto/create-booking.dto.ts",
         "../src/booking/schemas/booking.schema.ts"
@@ -5093,6 +5094,7 @@
       "../src/coment/coment.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts",
         "../node_modules/mongoose/index.d.ts",
         "../src/coment/dto/create-coment.dto.ts",
         "../src/coment/schemas/coment.schema.ts"

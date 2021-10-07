@@ -10,4 +10,5 @@ export declare class BookingService {
     getBookingbyId(id: string): Promise<any>;
     findBookingbyId(id: string): Promise<any>;
     delete(id: string): Promise<boolean>;
+    getBookingHoy(date: Date): Promise<any>;
 }

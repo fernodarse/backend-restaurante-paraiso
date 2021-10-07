@@ -17,4 +17,5 @@ export declare class BookingController {
         statusCode: HttpStatus;
         message: string;
     }>;
+    getBookHoy(): Promise<any>;
 }

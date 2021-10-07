@@ -79,6 +79,35 @@ let BookingService = class BookingService {
         }
         return true;
     }
+    async getBookingHoy(date) {
+        const startOfDay = new Date(date.setUTCHours(0, 0, 0, 0)).toISOString();
+        const endOfDay = new Date(date.setUTCHours(23, 59, 59, 999)).toISOString();
+        console.log('getBookingHoy', startOfDay, endOfDay);
+        try {
+            const coment = (await this.bookingModel.find({
+                'date': {
+                    $gte: startOfDay,
+                    $lt: endOfDay
+                }
+            })
+                .sort({ 'time': 1 })
+                .exec());
+            return coment.map(booking => ({
+                bookingId: booking.id,
+                name: booking.name,
+                email: booking.email,
+                date: booking.date,
+                time: booking.time,
+                cantPersonas: booking.cantPersonas,
+                mensaje: booking.mensaje,
+                activo: booking.activo,
+                createdDate: booking.createdDate,
+            }));
+        }
+        catch (error) {
+            throw new common_1.BadRequestException(error);
+        }
+    }
 };
 BookingService = __decorate([
     common_1.Injectable(),

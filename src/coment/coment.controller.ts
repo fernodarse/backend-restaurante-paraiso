@@ -75,6 +75,11 @@ export class ComentController {
         }
     }
 
+    @Get('/last/:dia')
+    getLastComent(@Param('dia') dia: number) {
+        console.log('buscando ', dia)
+        return this.comentService.getLastComent(dia);
+    }
 
 
 }

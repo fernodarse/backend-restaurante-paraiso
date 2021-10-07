@@ -73,6 +73,10 @@ let ComentController = class ComentController {
             };
         }
     }
+    getLastComent(dia) {
+        console.log('buscando ', dia);
+        return this.comentService.getLastComent(dia);
+    }
 };
 __decorate([
     common_1.Get(),
@@ -116,6 +120,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ComentController.prototype, "removeMenu", null);
+__decorate([
+    common_1.Get('/last/:dia'),
+    __param(0, common_1.Param('dia')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], ComentController.prototype, "getLastComent", null);
 ComentController = __decorate([
     common_1.Controller('coment'),
     __metadata("design:paramtypes", [coment_service_1.ComentService,

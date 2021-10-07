@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateComentDto } from './dto/create-coment.dto';
 import { Coment } from './schemas/coment.schema';
+import * as moment from 'moment';
 
 @Injectable()
 export class ComentService {
@@ -92,5 +93,35 @@ export class ComentService {
             throw new BadRequestException('No existe el comentario con id: ' + id);
         }
         return true;
+    }
+
+    async getLastComent(id: number): Promise<any> {
+        var finDay = new Date(moment().subtract(id,'days').format("YYYY-MM-DD")+"T00:00:00.000Z");
+        console.log('finday', finDay )
+        //var inputDate = new Date(new Date().toISOString());
+        try {
+            const coment = (await this.comentModel.find({
+                'commentDate': { $gte: finDay }
+            })
+            .sort({ 'commentDate' : -1 } )
+            .exec());
+
+            if (coment === null) {
+                throw new BadRequestException('No existe el menu con id: ' + id);
+            }
+
+            return coment.map(coment => ({
+                commentId: coment.id,
+                menuId: coment.menuId,
+                email: coment.email,
+                commentedBy: coment.commentedBy,
+                photoURL: coment.photoURL,
+                content: coment.content,
+                commentDate: coment.commentDate,
+                activo: coment.activo,
+            }));
+        } catch (error) {
+            throw new BadRequestException(error);
+        }
     }
 }

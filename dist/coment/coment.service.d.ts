@@ -11,4 +11,5 @@ export declare class ComentService {
     getComentbyMenu(menuId: any): Promise<any>;
     findComentbyId(id: string): Promise<any>;
     delete(id: string): Promise<boolean>;
+    getLastComent(id: number): Promise<any>;
 }

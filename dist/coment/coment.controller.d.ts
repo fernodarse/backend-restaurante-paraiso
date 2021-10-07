@@ -16,4 +16,5 @@ export declare class ComentController {
         statusCode: HttpStatus;
         message: string;
     }>;
+    getLastComent(dia: number): Promise<any>;
 }

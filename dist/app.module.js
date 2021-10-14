@@ -24,7 +24,7 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            mongoose_1.MongooseModule.forRoot("mongodb://admin:admin123@localhost/restaurante-paraiso"),
+            mongoose_1.MongooseModule.forRoot("mongodb+srv://admin:admin123@cluster0.2atrz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"),
             platform_express_1.MulterModule.register({ dest: './files', }),
             menu_module_1.MenuModule,
             evento_module_1.EventoModule,

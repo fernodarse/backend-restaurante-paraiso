@@ -14,7 +14,7 @@ import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [             //'mongodb://admin:admin123@localhost/restaurante-paraiso' //mongodb+srv://admin:admin123@cluster0.2atrz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-    MongooseModule.forRoot("mongodb://admin:admin123@localhost/restaurante-paraiso"),
+    MongooseModule.forRoot("mongodb+srv://admin:admin123@cluster0.2atrz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"),
     MulterModule.register({ dest: './files', }),
     MenuModule,
     EventoModule,

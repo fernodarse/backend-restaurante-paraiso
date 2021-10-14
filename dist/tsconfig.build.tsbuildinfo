@@ -2787,7 +2787,7 @@
         "affectsGlobalScope": false
       },
       "../src/mail/mail.module.ts": {
-        "version": "e00516b2ca38cc388fdbec089f55b279f338b4c2f401ad65b007dd936b1cf302",
+        "version": "ecf44e467dce3c377e3421de0d517135359bca3a3f945934e0e1a8d34ad46818",
         "signature": "6d1d5741b9310eb74d0cdd57f53757cc603e17114839706b912cdf7ae05a95d9",
         "affectsGlobalScope": false
       },
@@ -2817,7 +2817,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "88a4e0285612d036ddaa3782c94cb55731395a2b5fc26ac394888bea62ce2e18",
+        "version": "09056d796d903a5f6a7389991b3a37aef7f6aa085124c04e971352ee6a30fc7a",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },

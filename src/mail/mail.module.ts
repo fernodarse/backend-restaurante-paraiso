@@ -16,14 +16,15 @@ import path, { join,resolve } from 'path';
         secure: true,
 
         auth: {
-          /*user: 'lidiarosag19@gmail.com',
-          pass: 'Habia1..vez',*/
+          user: 'lidiarosag19@gmail.com',
+          pass: 'zwulxansglgbycic',
+          /*clientId: '197059767779-l8gcp6ocemneieqpotp7rrr2oqdq2v03.apps.googleusercontent.com',
           type: 'OAuth2',
           user: 'lidiarosag19',
-          clientId: '197059767779-l8gcp6ocemneieqpotp7rrr2oqdq2v03.apps.googleusercontent.com',
           clientSecret: 'xFzYQUTlGp57x3TS-S__-Jp9',
-          refreshToken: '1//04K90Qu2n9nV0CgYIARAAGAQSNwF-L9IrSKUzoGdchdjCdkslRGkI4A_n8MNC2QOWbCTbQq5owbFNM0MCBUCrKF8i-b-S-_3_NdE',
-          accessToken: 'ya29.a0ARrdaM9V5YBwUb1GL4YU4D56Q0FE_9i5gj6N-rmnn3OrjBJIHsOMS1Q9IsGGYtbKd9B-o5gP_0s1IJsS2p0y1C5fHZdvJOg-tThnKQvSkVrNPotnS38d0EmEmfFTp4l9ArrfX0sMJBqfrjQFNBz-NK2MZgui'
+          refreshToken: '1//04kCE_BES-X64CgYIARAAGAQSNwF-L9IrBPK6zu9nxsFyl0znZ0E8dSX4N8lE_nr2ZajeX-vhSr0gTAcdNt5FcWCpvENuQbPs35o',
+          accessToken: 'ya29.a0ARrdaM-BubdS_aNER0zQiCK4UVWBNTfuwB4-k4uqRIQhEN0iEOTtPjw1WrJdGQ8rA_NFGLndjcZODIEEnIlsczWEHrd-6Q5l5EONoGJijAE9-qRmYYURVePPweyWnfLkTZoECajhYJtIUF7X3kYl4HJChYbv',
+          expires: 3599*/
         },
       },
       defaults: {

@@ -24,7 +24,7 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            mongoose_1.MongooseModule.forRoot("mongodb+srv://admin:admin123@cluster0.2atrz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"),
+            mongoose_1.MongooseModule.forRoot("mongodb://ef90314ed7b34e99a590c77280f73690:admin123@11a.mongo.evennode.com:27018,11b.mongo.evennode.com:27018/ef90314ed7b34e99a590c77280f73690?replicaSet=eu-11"),
             platform_express_1.MulterModule.register({ dest: './files', }),
             menu_module_1.MenuModule,
             evento_module_1.EventoModule,

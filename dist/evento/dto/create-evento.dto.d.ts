@@ -5,4 +5,8 @@ export declare class CreateEventoDto {
     destacado: boolean;
     photoURL: string;
     createdDate: any;
+    datosImg: {
+        url: String;
+        name: String;
+    };
 }

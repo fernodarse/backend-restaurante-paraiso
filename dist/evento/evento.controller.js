@@ -29,7 +29,7 @@ let EventoController = class EventoController {
         return obj;
     }
     getBook(eventoId) {
-        return this.eventoService.getMenubyId(eventoId);
+        return this.eventoService.getEventobyId(eventoId);
     }
     async updateBook(eventoId, eventodto) {
         console.log('evento recibido', eventodto, eventoId);

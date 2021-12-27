@@ -22,7 +22,7 @@ export class EventoController {
 
     @Get('/id/:id')
     getBook(@Param('id') eventoId: string) {
-        return this.eventoService.getMenubyId(eventoId);
+        return this.eventoService.getEventobyId(eventoId);
     }
 
     @Patch(':id')

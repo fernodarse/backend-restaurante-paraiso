@@ -7,7 +7,7 @@ export declare class EventoService {
     create(evento: CreateEventoDto): Promise<Evento>;
     update(id: string, evento: CreateEventoDto): Promise<any>;
     getAllEventos(): Promise<any[]>;
-    getMenubyId(id: string): Promise<any>;
+    getEventobyId(id: string): Promise<any>;
     findEventobyId(id: string): Promise<any>;
     delete(id: string): Promise<boolean>;
 }

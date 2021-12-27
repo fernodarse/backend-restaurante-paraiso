@@ -41,9 +41,10 @@ let EventoService = class EventoService {
             destacado: evento.destacado,
             createdDate: evento.createdDate,
             photoURL: evento.photoURL,
+            datosImg: evento.datosImg,
         }));
     }
-    async getMenubyId(id) {
+    async getEventobyId(id) {
         const evento = (await this.findEventobyId(id));
         return {
             eventoId: evento.id,
@@ -52,6 +53,7 @@ let EventoService = class EventoService {
             destacado: evento.destacado,
             createdDate: evento.createdDate,
             photoURL: evento.photoURL,
+            datosImg: evento.datosImg,
         };
     }
     async findEventobyId(id) {

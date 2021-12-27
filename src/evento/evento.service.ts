@@ -35,10 +35,11 @@ export class EventoService {
             destacado: evento.destacado,
             createdDate: evento.createdDate,
             photoURL: evento.photoURL,
+            datosImg: evento.datosImg,
         }));
     }
 
-    async getMenubyId(id: string): Promise<any> {
+    async getEventobyId(id: string): Promise<any> {
         const evento =   (await this.findEventobyId(id));
         return {
             eventoId: evento.id,
@@ -47,6 +48,7 @@ export class EventoService {
             destacado: evento.destacado,
             createdDate: evento.createdDate,
             photoURL: evento.photoURL,
+            datosImg: evento.datosImg,
         };
     }
 

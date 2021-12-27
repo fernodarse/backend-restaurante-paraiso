@@ -20,4 +20,6 @@ export class  CreateEventoDto{
 
     @IsDate()
     createdDate: any;
+
+    datosImg: {  url:String, name: String  };
 }

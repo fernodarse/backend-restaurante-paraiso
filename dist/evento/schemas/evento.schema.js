@@ -31,12 +31,39 @@ __decorate([
     __metadata("design:type", Object)
 ], Evento.prototype, "createdDate", void 0);
 __decorate([
-    mongoose_1.Prop({ type: String, required: true }),
+    mongoose_1.Prop({ type: String }),
     __metadata("design:type", String)
 ], Evento.prototype, "photoURL", void 0);
+__decorate([
+    mongoose_1.Prop(mongoose_1.raw({
+        url: { type: String, default: '' },
+        name: { type: String, default: '' }
+    })),
+    __metadata("design:type", Object)
+], Evento.prototype, "datosImg", void 0);
 Evento = __decorate([
     mongoose_1.Schema()
 ], Evento);
 exports.Evento = Evento;
 exports.EventoSchema = mongoose_1.SchemaFactory.createForClass(Evento);
+exports.EventoSchema.pre('validate', function (next) {
+    console.log("Pre validate called", this.photoURL, this.datosImg);
+    if (this.photoURL == '' && this.datosImg.url == '') {
+        console.log("reportando error 1");
+        next(new Error('Debe seleccionar una imagen'));
+    }
+    else {
+        next();
+    }
+});
+exports.EventoSchema.pre('save', function (next) {
+    console.log("Pre save called", this.photoURL, this.datosImg);
+    if (this.photoURL == '' && this.datosImg.url == '') {
+        console.log("reportando error 2");
+        next(new Error('Debe seleccionar una imagen'));
+    }
+    else {
+        next();
+    }
+});
 //# sourceMappingURL=evento.schema.js.map

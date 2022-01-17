@@ -47,19 +47,7 @@ Evento = __decorate([
 exports.Evento = Evento;
 exports.EventoSchema = mongoose_1.SchemaFactory.createForClass(Evento);
 exports.EventoSchema.pre('validate', function (next) {
-    console.log("Pre validate called", this.photoURL, this.datosImg);
     if (this.photoURL == '' && this.datosImg.url == '') {
-        console.log("reportando error 1");
-        next(new Error('Debe seleccionar una imagen'));
-    }
-    else {
-        next();
-    }
-});
-exports.EventoSchema.pre('save', function (next) {
-    console.log("Pre save called", this.photoURL, this.datosImg);
-    if (this.photoURL == '' && this.datosImg.url == '') {
-        console.log("reportando error 2");
         next(new Error('Debe seleccionar una imagen'));
     }
     else {

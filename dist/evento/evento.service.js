@@ -34,6 +34,7 @@ let EventoService = class EventoService {
         const objList = (await this.model.find()
             .sort({ 'createdDate': -1 })
             .exec());
+        console.log("Eventos encontrados", objList.length);
         return objList.map(evento => ({
             eventoId: evento.id,
             name: evento.name,

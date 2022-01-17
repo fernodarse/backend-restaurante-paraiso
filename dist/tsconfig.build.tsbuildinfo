@@ -2617,12 +2617,12 @@
         "affectsGlobalScope": false
       },
       "../src/evento/schemas/evento.schema.ts": {
-        "version": "58083f33aa6a470468c5603d3ee5bd3d8e6a89575345baf02581f28462bdc415",
+        "version": "5a31625cb708994d7b556b3d2b0933cdcc0bcf4240d2cf42091f939d4d44b670",
         "signature": "d2a2a0a5ecdb93fa826e8f1eff2f36c241d6e036cef5ff72f56517bc329585a4",
         "affectsGlobalScope": false
       },
       "../src/evento/evento.service.ts": {
-        "version": "ce0b9375d6290cde19039649c2abbc5700838528cd3cc5e1409f1de4ba40cdcf",
+        "version": "1111ba3bd56564574d2745c18308bf87ad179007c4888e8dd3df844ad2dfb592",
         "signature": "e029a12e52875c5700f3b6419f11165a935e9a6ce05eab1ebb6c788a5d63d79f",
         "affectsGlobalScope": false
       },
@@ -2817,7 +2817,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "27676ea25828ffe4aa1cfc4e87c132890d931388442b4e04d90aee8b390fed4d",
+        "version": "35feb12d15074b7766ddfca6fda583d6ab0268de58f9343b49a744d0a42645a3",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
